@@ -1,0 +1,22 @@
+:root {
+  --bg: #fff;
+  --bg-color-alt: #020202;
+  --border: #f1f1f1;
+  --body-size: 60%;
+  --text-color: #020202;
+  --text-color-alt: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button,
+textarea,
+select {
+  font-family: "Poppins", sans-serif;
+}

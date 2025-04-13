@@ -1,0 +1,82 @@
+.Header {
+  width: 100%;
+  background-color: var(--bg);
+
+  div.brandSearchNavContainer {
+    padding: 0.5rem 0;
+    margin: 0 auto;
+    width: var(--body-size);
+    background-color: var(--bg);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    span {
+      justify-self: left;
+      font-size: 1.5rem;
+      color: var(--text-color);
+    }
+
+    section {
+      width: 100%;
+      form {
+        border: 1px solid var(--border);
+        border-radius: 0.25rem;
+        color: var(--text-color);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0 0.15rem;
+        background-color: whitesmoke;
+        width: 100%;
+
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 0 1rem;
+          height: 1.5rem;
+          font-size: 1rem;
+          background-color: transparent;
+        }
+        button {
+          color: var(--text-color);
+          border: none;
+          background-color: transparent;
+          font-size: 1rem;
+          padding: 0 0.5rem;
+          display: flex;
+
+          svg {
+            font-size: 1rem;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    ul {
+      height: 1.5rem;
+
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+
+      li {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        svg {
+          font-size: 1.25rem;
+          color: #020202;
+        }
+      }
+    }
+  }
+}

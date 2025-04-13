@@ -1,0 +1,5 @@
+#root {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: fit-content auto fit-content;
+}

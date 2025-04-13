@@ -1,0 +1,15 @@
+.Footer {
+  
+  align-self: flex-end;
+  display: flex;
+  background-color: #030303;
+  justify-content: center;
+
+  div {
+    width: var(--body-size);
+    height: fit-content;
+    color: var(--text-color-alt);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
