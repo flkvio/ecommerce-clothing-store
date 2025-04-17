@@ -60,21 +60,27 @@
         }
       }
     }
+    nav {
 
-    ul {
-      height: 1.5rem;
+      /* 
+      talvez fique bom
+      justify-self: right;
+      margin-right: 1rem; */
+      ul {
+        height: 1.5rem;
 
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-
-      li {
-        font-size: 1rem;
+        list-style: none;
         display: flex;
-        align-items: center;
-        svg {
-          font-size: 1.25rem;
-          color: #020202;
+        gap: 1rem;
+
+        li {
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          svg {
+            font-size: 1.25rem;
+            color: #020202;
+          }
         }
       }
     }

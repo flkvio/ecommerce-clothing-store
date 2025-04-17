@@ -21,17 +21,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {title.length > 50 ? "..." : null}
       </span>
       <img src={image} />
-      <span>
-        {Array.from({ length: 5 }).map((_, index) =>
-          index < Math.round(rating.rate) ? (
-            <AiFillStar key={index} />
-          ) : (
-            <AiOutlineStar key={index} />
-          )
-        )}{" "}
-        {rating.count}
-      </span>
-      <span>R$ {price}</span>
+      <div className={style.rateAndPriceContainer}>
+        <span>
+          {Array.from({ length: 5 }).map((_, index) =>
+            index < Math.round(rating.rate) ? (
+              <AiFillStar key={index} />
+            ) : (
+              <AiOutlineStar key={index} />
+            )
+          )}
+          ({rating.rate})
+        </span>
+        <span>R$ {price}</span>
+      </div>
       <button>Add to Cart</button>
     </article>
   );

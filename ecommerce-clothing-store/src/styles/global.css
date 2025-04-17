@@ -2,7 +2,7 @@
   --bg: #fff;
   --bg-color-alt: #020202;
   --border: #f1f1f1;
-  --body-size: 60%;
+  --body-size: 65%;
   --text-color: #020202;
   --text-color-alt: #f2f2f2;
 }
@@ -19,4 +19,21 @@ button,
 textarea,
 select {
   font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 1360px) {
+  :root {
+    --body-size: 80%;
+  }
+}
+@media (max-width: 1024px) {
+  :root {
+    --body-size: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --body-size: 100%;
+  }
 }

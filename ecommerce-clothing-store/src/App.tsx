@@ -1,15 +1,13 @@
-import { useState } from "react";
-import { DefaultLayout } from "./components/DefaultLayout/DefaultLayout";
+import { ProductsProvider } from "./context/ProductContext/ProductContext";
+import { DefaultLayout } from "./layouts/DefaultLayout/DefaultLayout";
 
 // import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
+    <ProductsProvider>
       <DefaultLayout />
-    </>
+    </ProductsProvider>
   );
 }
 
