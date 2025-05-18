@@ -1,13 +1,16 @@
-import { ProductsProvider } from "./context/ProductContext/ProductContext";
+import { AccountProvider } from "./context/AccountContext/AccountContext";
+import { StoreProvider } from "./context/ProductContext/ProductContext";
 import { DefaultLayout } from "./layouts/DefaultLayout/DefaultLayout";
 
 // import "./App.css";
 
 function App() {
   return (
-    <ProductsProvider>
-      <DefaultLayout />
-    </ProductsProvider>
+    <StoreProvider>
+      <AccountProvider>
+        <DefaultLayout />
+      </AccountProvider>
+    </StoreProvider>
   );
 }
 

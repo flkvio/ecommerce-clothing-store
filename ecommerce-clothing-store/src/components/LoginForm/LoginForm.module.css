@@ -1,0 +1,90 @@
+.LoginFormBackground {
+  background-color: #00000080;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LoginForm {
+  z-index: 3;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: calc(var(--body-size) / 2);
+  /* margin: auto; */
+  border: 1px solid #cccccc50;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  background-color: var(--bg);
+
+  button:first-of-type {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    width: 1rem;
+    height: 2rem;
+    margin-left: auto;
+    svg {
+      font-size: 1.5rem;
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  span {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  height: fit-content;
+
+  label {
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 0 1rem;
+      height: 1.5rem;
+      font-size: 1rem;
+      background-color: whitesmoke;
+    }
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+  div {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+
+    button[type="submit"] {
+      border: none;
+      border-radius: 0.25rem;
+      width: 100%;
+      font-size: 1rem;
+      background-color: var(--bg-color-alt);
+      color: var(--text-color-alt);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

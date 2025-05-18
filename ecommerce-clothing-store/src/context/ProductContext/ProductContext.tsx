@@ -11,19 +11,30 @@ export interface Product {
   rating: { rate: number; count: number };
 }
 
-interface ProductContextData {
-  products: Product[];
+interface Cart {
+  product: Product;
+  quantity: number;
 }
 
-export const ProductContext = createContext({} as ProductContextData);
+interface StoreContextData {
+  products: Product[];
+  cart: Cart[];
+  setCart: React.Dispatch<React.SetStateAction<Cart[]>>;
+  addProductToCart: (product: Product, quantity: number) => void;
+}
+
+export const StoreContext = createContext({} as StoreContextData);
 
 interface ProductProviderProps {
   children: React.ReactNode;
 }
-export const ProductsProvider: React.FC<ProductProviderProps> = ({
-  children,
-}) => {
+export const StoreProvider: React.FC<ProductProviderProps> = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [cart, setCart] = useState<Cart[]>([]);
+
+  const addProductToCart = (product: Product, quantity: number): void => {
+    setCart([{ product, quantity }, ...cart]);
+  };
 
   useEffect(() => {
     const getItems = async () => {
@@ -44,12 +55,15 @@ export const ProductsProvider: React.FC<ProductProviderProps> = ({
   }, []);
 
   return (
-    <ProductContext.Provider
+    <StoreContext.Provider
       value={{
         products,
+        cart,
+        setCart,
+        addProductToCart,
       }}
     >
       {children}
-    </ProductContext.Provider>
+    </StoreContext.Provider>
   );
 };

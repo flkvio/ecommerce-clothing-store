@@ -1,19 +1,20 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import style from "./ProductCard.module.css";
+import { Product, StoreContext } from "../../context/ProductContext/ProductContext";
+import { useContext } from "react";
 
 interface ProductCardProps {
-  title: string;
-  image: string;
-  price: number;
-  rating: { rate: number; count: number };
+  product: Product;
+  // title: string;
+  // image: string;
+  // price: number;
+  // rating: { rate: number; count: number };
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({
-  title,
-  image,
-  price,
-  rating,
-}) => {
+export const ProductCard: React.FC<ProductCardProps> = (props) => {
+  const { title, rating, image, price } = props.product;
+  const {addProductToCart} = useContext(StoreContext)
+
   return (
     <article className={style.ProductCard}>
       <span title={title}>
@@ -32,9 +33,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           )}
           ({rating.rate})
         </span>
-        <span>R$ {price}</span>
+        <span>R$ {price.toFixed(2)}</span>
       </div>
-      <button>Add to Cart</button>
+      <button
+        onClick={() => {
+          //
+          addProductToCart(props.product, 2)
+        }}
+      >
+        Add to Cart
+      </button>
     </article>
   );
 };
