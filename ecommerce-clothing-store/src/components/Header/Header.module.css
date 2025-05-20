@@ -16,7 +16,10 @@
     span {
       justify-self: left;
       font-size: 1.5rem;
-      color: var(--text-color);
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
     }
 
     section {
@@ -61,7 +64,6 @@
       }
     }
     nav {
-
       /* 
       talvez fique bom
       justify-self: right;
@@ -80,6 +82,10 @@
           svg {
             font-size: 1.25rem;
             color: #020202;
+          }
+
+          &:hover {
+            cursor: pointer;
           }
         }
       }

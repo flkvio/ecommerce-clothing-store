@@ -1,6 +1,7 @@
+import { BrowserRouter } from "react-router";
 import { AccountProvider } from "./context/AccountContext/AccountContext";
 import { StoreProvider } from "./context/ProductContext/ProductContext";
-import { DefaultLayout } from "./layouts/DefaultLayout/DefaultLayout";
+import { Router } from "./Router";
 
 // import "./App.css";
 
@@ -8,7 +9,10 @@ function App() {
   return (
     <StoreProvider>
       <AccountProvider>
-        <DefaultLayout />
+        <BrowserRouter>
+          {/* <DefaultLayout /> */}
+          <Router />
+        </BrowserRouter>
       </AccountProvider>
     </StoreProvider>
   );

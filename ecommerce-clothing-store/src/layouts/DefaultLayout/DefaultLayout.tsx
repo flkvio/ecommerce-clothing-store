@@ -1,8 +1,8 @@
 import { useContext } from "react";
+import { Outlet } from "react-router";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { Main } from "../../components/Main/Main";
 import { AccountContext } from "../../context/AccountContext/AccountContext";
 
 export const DefaultLayout: React.FC = () => {
@@ -11,9 +11,10 @@ export const DefaultLayout: React.FC = () => {
   return (
     <>
       <Header />
-      {!showLoginForm ? <LoginForm /> : null}
+      {showLoginForm ? <LoginForm /> : null}
 
-      <Main />
+      {/* <Main /> */}
+      <Outlet />
       <Footer />
     </>
   );

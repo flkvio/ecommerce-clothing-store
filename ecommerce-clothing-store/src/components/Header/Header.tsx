@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaSearch } from "react-icons/fa";
 import { SlBag, SlHeart } from "react-icons/sl";
 import style from "./Header.module.css";
+import { AccountContext } from "../../context/AccountContext/AccountContext";
+import { Link } from "react-router";
 export const Header: React.FC = () => {
+  const { setShowLoginForm } = useContext(AccountContext);
   return (
     <header className={style.Header}>
       <div className={style.brandSearchNavContainer}>
-        <span>ClothingStore</span>
+        <span>
+          <Link to="/">
+          ClothingStore
+          </Link>
+        </span>
         <section role="search">
           <form>
             <input type="text" />
@@ -22,9 +29,14 @@ export const Header: React.FC = () => {
             </li>
             <li title="Sacola">
               <SlBag />
-              
             </li>
-            <li>Login</li>
+            <li
+              onClick={() => {
+                setShowLoginForm(true);
+              }}
+            >
+              Login
+            </li>
           </ul>
         </nav>
       </div>

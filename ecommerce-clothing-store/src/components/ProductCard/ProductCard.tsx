@@ -1,6 +1,9 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import style from "./ProductCard.module.css";
-import { Product, StoreContext } from "../../context/ProductContext/ProductContext";
+import {
+  Product,
+  StoreContext,
+} from "../../context/ProductContext/ProductContext";
 import { useContext } from "react";
 
 interface ProductCardProps {
@@ -13,7 +16,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = (props) => {
   const { title, rating, image, price } = props.product;
-  const {addProductToCart} = useContext(StoreContext)
+  const { addProductToCart } = useContext(StoreContext);
 
   return (
     <article className={style.ProductCard}>
@@ -31,14 +34,14 @@ export const ProductCard: React.FC<ProductCardProps> = (props) => {
               <AiOutlineStar key={index} />
             )
           )}
-          ({rating.rate})
+          {rating.rate.toFixed(1)} ({rating.count})
         </span>
         <span>R$ {price.toFixed(2)}</span>
       </div>
       <button
         onClick={() => {
           //
-          addProductToCart(props.product, 2)
+          addProductToCart(props.product, 2);
         }}
       >
         Add to Cart

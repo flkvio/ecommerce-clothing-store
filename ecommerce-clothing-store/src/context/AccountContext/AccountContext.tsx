@@ -25,6 +25,7 @@ export const AccountProvider: React.FC<AccountProviderProps> = ({
     console.log("teste");
   }, []);
 
+
   return (
     <AccountContext.Provider
       value={{ isLogged, setIsLogged, showLoginForm, setShowLoginForm }}
