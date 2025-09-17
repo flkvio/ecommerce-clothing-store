@@ -1,0 +1,27 @@
+.Error404 {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: var(--body-size);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.9;
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: darkgrey;
+    }
+  }
+  svg {
+    font-size: 4rem;
+  }
+}
